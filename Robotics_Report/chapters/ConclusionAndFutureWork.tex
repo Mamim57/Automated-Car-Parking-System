@@ -1,0 +1,52 @@
+
+\vspace{-0.8cm}
+
+This chapter presents the conclusion of the \textbf{Automated Car Parking System} project. It summarizes the completed work, key findings, limitations, and possible future improvements.
+
+\section{Summary of the Work}
+
+The main objective of this project was to design and implement an Automated Car Parking System using robotics and IoT technologies. The system was developed using Arduino UNO, IR sensors, RFID module, ESP-01S Wi-Fi module, 16x2 I2C LCD display, servo motor, and a two-link robotic arm gate mechanism.
+
+The system detects vehicles at the entry and exit points using IR sensors. During entry, it checks slot availability and verifies the RFID card before opening the gate. If the RFID card is valid and a slot is available, the servo motor moves the two-link robotic arm to open the gate. After vehicle entry, the slot count is updated on the LCD and the entry record is sent to the online server. During exit, the system opens the gate, updates the slot count, and sends the exit record online.
+
+The final prototype was tested in a lab environment and performed successfully in vehicle detection, RFID authentication, robotic arm gate operation, slot count update, LCD display, and IoT-based data transmission.
+
+\section{Key Findings and Contributions}
+
+The project achieved its major objectives and produced a functional prototype. The key findings and contributions are listed below:
+
+\begin{itemize}
+    \item IR sensors successfully detected vehicles at entry and exit points.
+    \item RFID authentication allowed only authorized users to enter.
+    \item The servo motor-controlled two-link robotic arm worked as an automatic gate.
+    \item The LCD displayed real-time parking slot availability and system messages.
+    \item The ESP-01S Wi-Fi module transmitted entry and exit records online.
+    \item The system reduced manual gate control, slot counting, and record keeping.
+    \item The project demonstrated practical integration of robotics and IoT in parking automation.
+\end{itemize}
+
+The main technical contribution of the project is the use of a two-link robotic arm gate instead of a simple static barrier. This makes the system more suitable for a robotics-based automation project.
+
+\section{Limitations of the Study}
+
+Although the system worked successfully as a prototype, it has some limitations. The system was tested on a small-scale model, so real-world implementation would require stronger motors, durable materials, and improved mechanical structure. IR sensors may be affected by object position, distance, and surrounding conditions. The robotic arm also requires proper alignment for stable movement.
+
+The Wi-Fi communication depends on network availability, so weak internet connection may delay or stop online data transmission. The current system uses RFID-based authentication only and does not include automatic number plate recognition, mobile application, payment system, reservation system, or camera-based detection.
+
+\section{Recommendations and Future Work}
+
+The prototype can be improved in several ways. Future improvements may include:
+
+\begin{itemize}
+    \item Adding automatic number plate recognition using a camera.
+    \item Developing a mobile application for users and administrators.
+    \item Adding online parking reservation and payment features.
+    \item Improving data security for RFID records and online communication.
+    \item Using stronger motors and durable materials for real gate operation.
+    \item Adding backup power support for continuous operation.
+    \item Improving the robotic arm design for smoother movement.
+    \item Adding individual slot sensors for multiple parking spaces.
+\end{itemize}
+
+In conclusion, the Automated Car Parking System successfully fulfills the main goal of automating parking entry and exit using robotics and IoT technologies. The project provides a practical prototype that can be further improved for academic, residential, and commercial parking environments.
+

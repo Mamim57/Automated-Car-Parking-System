@@ -1,0 +1,99 @@
+
+\vspace{-0.8cm}
+
+This chapter presents the results and evaluation of the \textbf{Automated Car Parking System}. The system was tested to evaluate vehicle detection, RFID authentication, robotic arm gate movement, parking slot update, LCD output, and IoT data transmission.
+
+\section{Experimental Setup}
+
+The prototype was tested in a lab environment using a small-scale parking model. The setup included Arduino UNO, two IR sensors, MFRC522 RFID module, servo motor, two-link robotic arm gate, 16x2 I2C LCD, and ESP-01S Wi-Fi module. Toy cars or hand-based object movement were used to simulate vehicle entry and exit.
+
+The entry IR sensor was placed near the entrance gate, and the exit IR sensor was placed near the exit point. The RFID reader was placed at the entrance for authorized access. The servo motor controlled the robotic arm gate, the LCD displayed available slots, and the Wi-Fi module sent parking records to the online server.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Experimental Setup}
+\label{tab:experimental_setup}
+\begin{tabular}{p{4cm} p{8.5cm}}
+\toprule
+\textbf{Item} & \textbf{Description} \\
+\midrule
+Controller & Arduino UNO \\
+Vehicle Detection & IR sensors at entry and exit points \\
+Authentication & MFRC522 RFID reader and RFID cards \\
+Gate Mechanism & Servo motor-controlled two-link robotic arm \\
+Display Unit & 16x2 I2C LCD display \\
+Communication & ESP-01S Wi-Fi module \\
+Parking Capacity & 4 prototype parking slots \\
+Testing Method & Repeated entry and exit simulation \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{table}
+
+\section{Performance Evaluation}
+
+The system was evaluated based on functional correctness, response behavior, and module reliability. The main testing areas were vehicle detection, RFID verification, gate operation, slot count update, LCD display, and IoT data transmission.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Functional Test Result}
+\label{tab:functional_test_result}
+\begin{tabular}{p{4.6cm} p{2.2cm} p{2.2cm} p{3cm}}
+\toprule
+\textbf{Test Case} & \textbf{Total Test} & \textbf{Successful} & \textbf{Result} \\
+\midrule
+Entry IR detection & 20 & 20 & Successful \\
+Exit IR detection & 20 & 20 & Successful \\
+Valid RFID detection & 15 & 15 & Successful \\
+Invalid RFID rejection & 10 & 10 & Successful \\
+Robotic arm gate operation & 20 & 19 & Mostly successful \\
+Parking slot update & 20 & 20 & Successful \\
+LCD status display & 20 & 20 & Successful \\
+IoT data transmission & 20 & 18 & Mostly successful \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{table}
+
+The test results show that the IR sensors detected vehicles accurately during prototype testing. RFID authentication worked correctly for both valid and invalid cards. The robotic arm gate opened and closed successfully in most cases, although minor movement variation occurred due to servo positioning and mechanical alignment. The LCD displayed correct slot information, and IoT data transmission was successful in most tests, depending on Wi-Fi stability.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Overall Performance Summary}
+\label{tab:overall_performance}
+\begin{tabular}{p{5cm} p{4cm} p{3.5cm}}
+\toprule
+\textbf{Performance Area} & \textbf{Observed Performance} & \textbf{Comment} \\
+\midrule
+Vehicle Detection & 100\% & Accurate in lab testing \\
+RFID Authentication & 100\% & Valid and invalid cards detected correctly \\
+Robotic Arm Operation & 95\% & Minor adjustment needed \\
+Slot Count Update & 100\% & Updated correctly \\
+LCD Display & 100\% & Displayed correct status \\
+IoT Data Transmission & 90\% & Depended on Wi-Fi connection \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{table}
+
+\section{Discussion on Findings}
+
+The experimental results indicate that the main objectives of the project were achieved. The system successfully detected vehicle presence, verified RFID cards, controlled the two-link robotic arm gate, updated parking slot count, displayed information on the LCD, and sent data to the online server.
+
+Compared with a manual parking system, the proposed system reduces human involvement in gate control, slot counting, and record keeping. Compared with a simple servo gate system, this project adds RFID authentication, IoT-based data storage, and a two-link robotic arm mechanism, making it more suitable for robotics lab demonstration.
+
+The IR sensors performed well at short range, and RFID provided a simple and effective access control method. The servo motor controlled the robotic arm properly, but mechanical alignment was important for smooth movement. The IoT module added remote record storage, although its performance depended on Wi-Fi connection quality and ESP-01S response time.
+
+\section{Limitations}
+
+Although the prototype performed successfully, it has some limitations. The system was tested on a small-scale model, so real-world implementation would require a stronger motor, better mechanical structure, and more durable materials. IR sensors may be affected by object position, distance, or lighting conditions. The robotic arm also needs proper alignment for stable movement.
+
+The Wi-Fi communication depends on network availability. If the connection is weak, online data transmission may fail. The current prototype uses RFID only and does not include automatic number plate recognition, mobile application, payment system, camera-based detection, or large-scale database management.
+
+\section{Summary}
+
+This chapter presented the experimental setup, functional test results, performance summary, discussion, and limitations of the Automated Car Parking System. The results show that the system can perform vehicle detection, RFID authentication, robotic arm gate control, slot count update, LCD display, and IoT data transmission successfully. Overall, the project demonstrates a practical prototype of a robotics and IoT-based automated parking system.
+
