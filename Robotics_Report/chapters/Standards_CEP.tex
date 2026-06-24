@@ -1,0 +1,130 @@
+
+\vspace{-0.8cm}
+
+This chapter discusses how the \textbf{Automated Car Parking System} satisfies engineering standards, design constraints, Complex Engineering Problem (CEP) attributes, Complex Engineering Activity (CEA) attributes, and Knowledge Profile requirements. Since the project combines hardware, software, robotics, and IoT communication, safety, reliability, privacy, sustainability, and professional responsibility were considered during design and implementation.
+
+\section{Compliance with Standards and Professional Practice}
+
+The project followed basic engineering practices for embedded system design, hardware interfacing, modular programming, IoT communication, documentation, and testing. Relevant documentation such as Arduino UNO, Servo library, MFRC522 RFID module, ESP8266, and Firebase documentation was considered during development \cite{b8,b9,b10,b11,b12}.
+
+\subsection{Software and Hardware Practice}
+
+The software was developed using Arduino C/C++ in Arduino IDE. The code was organized into separate functions for RFID reading, gate control, LCD update, Wi-Fi connection, timestamp generation, and data transmission. Standard libraries such as \texttt{Servo.h}, \texttt{SPI.h}, \texttt{MFRC522.h}, \texttt{Wire.h}, and \texttt{LiquidCrystal\_I2C.h} were used.
+
+The hardware design followed basic low-voltage embedded system interfacing practice. Arduino UNO was used as the controller, IR sensors were used for detection, MFRC522 used SPI communication, LCD used I2C communication, ESP-01S used serial communication, and the servo motor controlled the two-link robotic arm. Safe testing was performed using a small-scale prototype instead of a real vehicle gate.
+
+\subsection{Professional Considerations}
+
+The system stores RFID UID, entry/exit event, owner information, and timestamp. Therefore, privacy and responsible data use were considered. In real deployment, Wi-Fi credentials, database keys, and user records must be protected and should not be published in source code or reports.
+
+\section{Design Constraints}
+
+The project was affected by cost, component availability, sensor accuracy, power stability, mechanical alignment, and Wi-Fi reliability. Since it was developed as an academic prototype, low-cost components were selected while keeping the main functions operational.
+
+\subsection{Ethical, Safety, and Sustainability Considerations}
+
+The testing results and limitations were reported honestly. Related works and technical documentation were cited properly. RFID and online data should be handled responsibly to protect user privacy.
+
+For safety, low-voltage components were used and the robotic arm was tested in a controlled lab environment. The servo movement was kept smooth to reduce sudden motion, and direct contact with the moving arm was avoided during operation.
+
+From an environmental perspective, the system uses low-power and reusable electronic components. In practical use, automated parking can reduce unnecessary waiting time and vehicle movement near the gate, which may help reduce fuel consumption and emissions.
+
+\section{Complex Engineering Problem (CEP) Coverage}
+
+The project addresses a complex engineering problem because it integrates embedded control, sensors, authentication, robotic actuation, IoT communication, and real-time decision making.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Mapping with Complex Engineering Problems (Ps)}
+\label{tab:cep_mapping}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{0.07\textwidth}|p{0.24\textwidth}|p{0.5\textwidth}|p{0.17\textwidth}|}
+\hline
+\textbf{Ps} & \textbf{Attributes} & \textbf{How Ps are addressed} & \textbf{Evidence} \\
+\hline
+P1 & Depth of Knowledge & Applies embedded systems, sensors, RFID, servo control, IoT, and database communication. & Ch. 2, 3, 4 \\
+\hline
+P2 & Conflicting Requirements & Balances low cost, real-time response, reliable detection, smooth gate movement, and online data transfer. & Ch. 3, 5 \\
+\hline
+P3 & Depth of Analysis & Analyzes sensor response, RFID validation, slot counting, robotic arm motion, and Wi-Fi transmission. & Ch. 4, 5 \\
+\hline
+P4 & Familiarity of Issues & Parking automation is known, but robotic arm gate with IoT monitoring creates project-specific challenges. & Ch. 1, 2, 3 \\
+\hline
+P5 & Applicable Standards & Uses standard Arduino libraries, hardware interfacing practices, and IoT data handling principles. & Sec. 7.1 \\
+\hline
+P6 & Stakeholder Needs & Supports drivers, parking managers, and maintainers through automation and monitoring. & Ch. 3, Appendix \\
+\hline
+P7 & Interdependence & Sensors, RFID, servo, LCD, Wi-Fi, and server are interconnected; failure of one module affects the system. & Ch. 3, 4, 5 \\
+\hline
+\end{tabular}
+}
+\normalsize
+\end{table}
+
+\section{Complex Engineering Activities (CEA) Coverage}
+
+The project involves complex engineering activities because it required multiple resources, hardware-software interaction, implementation, testing, and evaluation.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Mapping of Complex Engineering Activities (As)}
+\label{tab:activities_mapping}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{0.07\textwidth}|p{0.24\textwidth}|p{0.5\textwidth}|p{0.17\textwidth}|}
+\hline
+\textbf{As} & \textbf{Attributes} & \textbf{How As are addressed} & \textbf{Evidence} \\
+\hline
+A1 & Range of Resources & Uses Arduino UNO, IR sensors, RFID, ESP-01S, LCD, servo motor, robotic arm materials, libraries, and online database. & Ch. 3, 4 \\
+\hline
+A2 & Level of Interaction & Multiple modules interact, including sensors, RFID, servo, LCD, Wi-Fi module, and server. & Ch. 3, 4 \\
+\hline
+A3 & Innovation & Uses a two-link robotic arm gate instead of a simple static barrier. & Ch. 3, 5 \\
+\hline
+A4 & Society and Environment & Can reduce waiting time, improve parking management, reduce manual effort, and support smart city applications. & Ch. 1, 7 \\
+\hline
+A5 & Familiarity & Combines known technologies into a practical robotics-IoT parking automation prototype. & Ch. 2, 4 \\
+\hline
+\end{tabular}
+}
+\normalsize
+\end{table}
+
+\section{Knowledge Profile Mapping}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Knowledge Profile Mapping}
+\label{tab:knowledge_profile_mapping}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{0.09\textwidth}|p{0.35\textwidth}|p{0.48\textwidth}|}
+\hline
+\textbf{Profile} & \textbf{Knowledge Area} & \textbf{Project Evidence} \\
+\hline
+K1 & Natural science and engineering fundamentals & Sensor detection, electrical interfacing, and servo control. \\
+\hline
+K2 & Mathematics and computing & Control logic, slot counting, timestamp generation, and data formatting. \\
+\hline
+K3 & Engineering fundamentals & Embedded system design using Arduino and electronic modules. \\
+\hline
+K4 & Specialist knowledge & RFID authentication, IoT communication, and robotic arm gate control. \\
+\hline
+K5 & Engineering design & System architecture, circuit design, and hardware-software integration. \\
+\hline
+K6 & Engineering practice & Prototype development, testing, debugging, and documentation. \\
+\hline
+K7 & Social, environmental, and safety knowledge & Parking efficiency, safety, data privacy, and sustainability considerations. \\
+\hline
+K8 & Research literature and standards & Related works review and use of technical documentation. \\
+\hline
+\end{tabular}
+}
+\normalsize
+\end{table}
+
+\section{Summary}
+
+This chapter presented the standards, design constraints, CEP coverage, CEA coverage, and Knowledge Profile mapping of the Automated Car Parking System. The project satisfies engineering requirements by integrating embedded control, robotics, IoT communication, and real-time parking management while considering safety, privacy, sustainability, and professional responsibility.
+

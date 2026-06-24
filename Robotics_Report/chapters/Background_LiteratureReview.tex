@@ -1,0 +1,120 @@
+
+This chapter presents the background concepts, related works, and existing systems associated with the proposed \textbf{Automated Car Parking System}. It briefly explains the main technologies used in the project and identifies the limitations of existing parking solutions.
+
+\section{Preliminaries}
+
+The proposed system combines embedded systems, sensors, RFID authentication, robotic actuation, LCD display, and IoT-based data communication. These components work together to detect vehicles, verify users, control the gate, update parking slots, and store parking records online.
+
+\subsection{Internet of Things}
+
+The Internet of Things (IoT) connects physical devices to the internet for data exchange and remote monitoring \cite{b7}. In this project, IoT is used to send vehicle entry and exit records to an online server or database through the ESP-01S Wi-Fi module.
+
+\subsection{Embedded System and Arduino UNO}
+
+An embedded system is designed to perform a specific task using hardware and software. The Arduino UNO works as the main controller of this project. It receives input from IR sensors and the RFID module, processes the logic, controls the servo motor, updates the LCD, and communicates with the Wi-Fi module \cite{b9}.
+
+\subsection{IR Sensor}
+
+IR sensors are used to detect vehicle presence at the entry and exit points. When a vehicle is detected, the sensor sends a digital signal to the Arduino, which starts the entry or exit process.
+
+\subsection{RFID Technology}
+
+RFID is used for contactless identification. In this project, the RFID reader scans a card UID and compares it with authorized IDs. If the card is valid, the system allows the vehicle to enter; otherwise, access is denied \cite{b11}.
+
+\subsection{Servo Motor and Two-Link Robotic Arm}
+
+A servo motor provides controlled angular movement and is commonly used in robotics \cite{b10}. In this project, the servo motor controls a two-link robotic arm that works as the automatic gate mechanism. The robotic arm opens when access is granted and closes after the vehicle passes.
+
+\subsection{LCD Display and ESP-01S Wi-Fi Module}
+
+The 16x2 I2C LCD displays system messages and available parking slots. The ESP-01S Wi-Fi module sends parking event data to the online server using serial AT commands. This supports digital record keeping and remote monitoring.
+
+\subsection{Online Database}
+
+An online database stores entry and exit records so that parking information can be monitored remotely. Firebase Realtime Database is one example of a real-time cloud database that can store and synchronize data across connected clients \cite{b8}.
+
+\section{Related Works / Existing Systems}
+
+Smart parking systems have been developed using different technologies such as sensors, IoT platforms, RFID authentication, cloud databases, and mobile applications. These systems aim to reduce parking time, improve space utilization, and support smart city applications.
+
+\subsection{Sensor-Based Smart Parking Systems}
+
+Sensor-based systems use IR, ultrasonic, magnetic, or camera-based sensors to detect vehicle presence. Choudhary \etal proposed an IoT-based smart parking system using sensors and microcontrollers to identify available parking spaces \cite{b3}. Such systems are simple and low-cost, but many of them focus only on slot detection and do not include authentication or robotic gate control.
+
+\subsection{IoT-Based Parking Systems}
+
+IoT-based parking systems connect hardware devices with online platforms for remote monitoring. Elsonbaty and Shams proposed a smart parking management system using Arduino, Android application, and IoT technology \cite{b2}. Mamun \etal also developed an IoT-enabled smart parking system using integrated sensors and mobile applications \cite{b4}. These systems improve monitoring, but many of them do not include a robotics-based gate mechanism.
+
+\subsection{RFID-Based Access Control Systems}
+
+RFID-based systems are widely used for controlled parking areas such as offices, universities, and residential buildings. They allow entry only for authorized users. However, some RFID-based systems do not include complete parking slot monitoring or online data storage. The proposed system combines RFID authentication with slot counting, LCD display, and IoT-based record storage.
+
+\subsection{Cloud-Based and Middleware Parking Systems}
+
+Cloud-based systems store parking information on remote servers. Ji \etal proposed a cloud-based car parking middleware for IoT-based smart cities \cite{b1}. Middleware can improve data handling and scalability, but it may increase complexity. The proposed system uses a lightweight online communication approach suitable for a prototype.
+
+\subsection{Automated Gate Control Systems}
+
+Automated gates are commonly controlled using DC motors, stepper motors, or servo motors. Most basic parking projects use a simple servo barrier gate. In this project, a two-link robotic arm gate is used instead, which adds a robotics-based mechanical movement to the system.
+
+\section{Comparative Analysis of Related Works}
+
+Existing systems usually focus on one or two major features such as slot detection, IoT monitoring, RFID access, or gate automation. The proposed system combines these features with a two-link robotic arm gate, making it suitable for both smart parking and robotics demonstration.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Comparison of Related Parking System Approaches}
+\label{tab:related_work_comparison}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{3.2cm} p{3.2cm} p{3.2cm} p{3.2cm} p{3.4cm}}
+\toprule
+\textbf{Approach / Study} & \textbf{Technology} & \textbf{Strengths} & \textbf{Limitations} & \textbf{Relation with Proposed System} \\
+\midrule
+
+Sensor-based parking \cite{b3} 
+& Sensors, microcontroller 
+& Low cost and simple 
+& Limited access control 
+& Proposed system adds RFID, IoT, and robotic arm gate. \\
+
+IoT parking system \cite{b2,b4} 
+& Arduino, IoT, mobile app 
+& Remote monitoring 
+& More software dependency 
+& Proposed system focuses on compact prototype automation. \\
+
+Cloud parking middleware \cite{b1} 
+& Cloud and middleware 
+& Better data management 
+& More complex architecture 
+& Proposed system uses lightweight online data transfer. \\
+
+RFID access control 
+& RFID reader and card 
+& Improves security 
+& Limited slot monitoring 
+& Proposed system combines RFID with slot update and IoT. \\
+
+Servo gate system 
+& Servo and sensor 
+& Simple automation 
+& Limited robotic motion 
+& Proposed system uses a two-link robotic arm gate. \\
+
+\bottomrule
+\end{tabular}
+}
+\normalsize
+\end{table}
+
+\section{Research Gap / Limitations of Existing Methods}
+
+Many existing smart parking systems have limitations. Some systems only detect available slots but do not automate user authentication or gate operation. Some systems use simple servo barriers that do not show significant robotic movement. Other systems provide remote monitoring but require complex mobile applications or cloud architecture.
+
+Another common limitation is the lack of complete integration. A system may include sensors but not RFID authentication, or it may include RFID but not IoT-based data storage. The proposed Automated Car Parking System addresses these gaps by combining vehicle detection, RFID-based access control, two-link robotic arm gate operation, LCD-based slot display, and IoT-based parking record storage in one low-cost prototype.
+
+\section{Summary}
+
+This chapter discussed the basic technologies and related works associated with the Automated Car Parking System. Existing systems show the usefulness of sensors, IoT, RFID, cloud storage, and automated gates in parking management. However, many systems lack a combined approach with robotic gate movement. The proposed system addresses this gap by integrating IR sensors, RFID authentication, Arduino control, ESP-01S communication, LCD display, and a two-link robotic arm gate for smart parking automation.
+
