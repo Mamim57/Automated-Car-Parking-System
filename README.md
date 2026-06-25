@@ -48,8 +48,9 @@ The **Automated Car Parking System** is an Arduino-based robotics and IoT projec
 
 
 
-## 📁 Repository Contents
+## 📁 Repository Structure
 
+```text
 Automated-Car-Parking-System/
 │
 ├── Image/
